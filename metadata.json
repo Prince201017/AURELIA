@@ -1,0 +1,6 @@
+{
+  "name": "AURELIA — Haute Joaillerie",
+  "description": "AURELIA — contemporary high jewellery shaped by light, platinum and diamonds.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
