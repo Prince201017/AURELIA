@@ -227,7 +227,7 @@ export function AuthGateway({
                     <button
                       type="button"
                       onClick={() => setReadingPolicy(null)}
-                      className="text-xs uppercase tracking-[0.16em] font-mono text-black underline underline-offset-4 hover:text-[#57534e] cursor-pointer"
+                      className="font-serif text-sm text-black underline underline-offset-4 hover:text-[#57534e] cursor-pointer"
                     >
                       Close
                     </button>
@@ -312,7 +312,7 @@ export function AuthGateway({
                   <button
                     type="button"
                     onClick={() => setReadingPolicy(null)}
-                    className="py-2.5 px-5 bg-black text-white text-xs uppercase tracking-[0.18em] rounded-lg hover:bg-stone-800 transition-colors cursor-pointer"
+                    className="py-2.5 px-5 bg-black text-white font-serif text-sm rounded-lg hover:bg-stone-800 transition-colors cursor-pointer"
                   >
                     Done Reading
                   </button>
@@ -358,7 +358,7 @@ export function AuthGateway({
                       <button
                         type="button"
                         onClick={() => setReadingPolicy('tos')}
-                        className="text-xs text-black font-semibold underline underline-offset-2 hover:text-[#57534e] cursor-pointer shrink-0 pt-0.5"
+                        className="font-serif text-sm text-black underline underline-offset-2 hover:text-[#57534e] cursor-pointer shrink-0 pt-0.5"
                       >
                         Read
                       </button>
@@ -384,7 +384,7 @@ export function AuthGateway({
                       <button
                         type="button"
                         onClick={() => setReadingPolicy('privacy')}
-                        className="text-xs text-black font-semibold underline underline-offset-2 hover:text-[#57534e] cursor-pointer shrink-0 pt-0.5"
+                        className="font-serif text-sm text-black underline underline-offset-2 hover:text-[#57534e] cursor-pointer shrink-0 pt-0.5"
                       >
                         Read
                       </button>
@@ -440,7 +440,7 @@ export function AuthGateway({
                   <button
                     type="button"
                     onClick={() => setSignUpStep('inputs')}
-                    className="px-4 py-3 border border-black text-black hover:bg-stone-100 rounded-lg transition-colors cursor-pointer flex items-center gap-2 text-xs font-medium tracking-[0.14em] uppercase"
+                    className="px-4 py-3 border border-black text-black hover:bg-stone-100 rounded-lg transition-colors cursor-pointer flex items-center gap-2 font-serif text-sm"
                     title="Back to form details"
                   >
                     <ArrowLeft className="w-4 h-4 stroke-[2]" />
@@ -454,12 +454,12 @@ export function AuthGateway({
                     className={`flex-1 py-3 px-5 border text-xs uppercase tracking-[0.2em] font-medium transition-all duration-300 flex items-center justify-between rounded-lg ${
                       consent18Plus && consentTermsRead
                         ? 'border-black bg-black text-white hover:bg-stone-900 cursor-pointer shadow-md'
-                        : 'border-[#dfd7cc] bg-[#f5f1ea] text-[#a39c92] cursor-not-allowed'
+                        : 'border-black bg-transparent text-black cursor-not-allowed'
                     }`}
                   >
                     <span className="w-4" />
-                    <span className="text-white font-medium tracking-[0.2em]">Agree</span>
-                    <ArrowRight className="w-4 h-4 text-white" />
+                    <span className={consent18Plus && consentTermsRead ? 'text-white font-serif text-sm' : 'text-black font-serif text-sm'}>Agree</span>
+                    <ArrowRight className={`w-4 h-4 ${consent18Plus && consentTermsRead ? 'text-white' : 'text-black'}`} />
                   </button>
                 </div>
               </div>
@@ -493,7 +493,7 @@ export function AuthGateway({
                     className={`text-xs uppercase tracking-[0.2em] relative pb-2.5 font-medium transition-colors cursor-pointer ${
                       mode === 'signin'
                         ? 'text-[#1c1917]'
-                        : 'text-[#8c857b] hover:text-[#1c1917]'
+                        : 'text-black hover:text-[#57534e]'
                     }`}
                   >
                     SIGN IN
@@ -511,7 +511,7 @@ export function AuthGateway({
                     className={`text-xs uppercase tracking-[0.2em] relative pb-2.5 font-medium transition-colors cursor-pointer ${
                       mode === 'signup'
                         ? 'text-[#1c1917]'
-                        : 'text-[#8c857b] hover:text-[#1c1917]'
+                        : 'text-black hover:text-[#57534e]'
                     }`}
                   >
                     SIGN UP
@@ -676,7 +676,7 @@ export function AuthGateway({
                           setSignUpStep('inputs');
                           setErrorMsg('');
                         }}
-                        className="text-black underline underline-offset-4 hover:text-[#78716c] cursor-pointer"
+                        className="font-serif text-black underline underline-offset-4 hover:text-[#57534e] cursor-pointer"
                       >
                         Create an account
                       </button>{' '}
@@ -691,7 +691,7 @@ export function AuthGateway({
                           setMode('signin');
                           setErrorMsg('');
                         }}
-                        className="text-black underline underline-offset-4 hover:text-[#78716c] cursor-pointer"
+                        className="font-serif text-black underline underline-offset-4 hover:text-[#57534e] cursor-pointer"
                       >
                         Sign in
                       </button>{' '}
