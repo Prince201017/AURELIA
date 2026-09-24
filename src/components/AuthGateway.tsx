@@ -122,7 +122,7 @@ export function AuthGateway({
   };
 
   return (
-    <div className="fixed inset-0 z-[100] w-full h-full overflow-y-auto bg-[#f4efe8] flex flex-col select-text">
+    <div className="auth-gateway fixed inset-0 z-[100] w-full h-full overflow-y-auto bg-[#f4efe8] flex flex-col select-text">
       {/* Floating Close Button (NO top header bar cutting the screen) */}
       <button
         onClick={onClose}
@@ -241,7 +241,7 @@ export function AuthGateway({
                             1. Exclusive Intellectual Property & Geometries
                           </h4>
                           <p className="mt-1 text-[#57534e]">
-                            All custom CAD geometries, wax sculpture casts, hallmark insignias, and mounting designs created by Maison Aurelia remain the exclusive and sovereign property of Aurelia Haute Joaillerie S.A.S.
+                            All website content, product photography, brand marks, designs, CAD files, certificates, and bespoke concepts are owned by Maison Aurelia or its licensors. You may not copy, reproduce, resell, or commercially use them without written permission. Product descriptions and images are presented as accurately as possible, but minor variations may occur in handmade or made-to-order pieces.
                           </p>
                         </div>
 
@@ -250,7 +250,7 @@ export function AuthGateway({
                             2. Bespoke Commissions & Certified Escrow
                           </h4>
                           <p className="mt-1 text-[#57534e]">
-                            Each bespoke parure commission requires an initial 50% retainer preserved within third-party Swiss or French escrow safeguards until final client sign-off and gemological appraisal.
+                            Orders are confirmed only after payment authorization and written acceptance. Prices are shown in Indian Rupees and include applicable taxes unless stated otherwise. For high-value or bespoke orders, we may request identity, address, and payment verification before dispatch. A disclosed advance or customization charge may be non-refundable where work has started.
                           </p>
                         </div>
 
@@ -259,7 +259,7 @@ export function AuthGateway({
                             3. Diplomatic Armored Courier Handover
                           </h4>
                           <p className="mt-1 text-[#57534e]">
-                            Finished high jewellery creations are underwritten by Lloyd&apos;s of London and dispatched directly under armed diplomatic custody to your private salon or designated estate.
+                            We deliver to serviceable addresses in India through trusted logistics partners. Delivery dates are estimates and may be affected by verification, weather, remote locations, customs, or events beyond our control. You must inspect the parcel at delivery and report visible damage or a missing item to support promptly with photographs and the order number.
                           </p>
                         </div>
 
@@ -268,7 +268,7 @@ export function AuthGateway({
                             4. Salon Discretion & Private Viewing Protocols
                           </h4>
                           <p className="mt-1 text-[#57534e]">
-                            Clients and maison curators agree to maintain discretion concerning private dossier valuations, heirloom provenance records, and custom salon viewings.
+                            Eligible ready-to-ship products may be returned or exchanged within the period stated on the product page, subject to condition, packaging, certificates, and verification. Personalized, engraved, resized, altered, hygiene-sensitive, or made-to-order pieces may be excluded except where defective or incorrectly supplied. Nothing here limits rights available under the Consumer Protection Act, 2019.
                           </p>
                         </div>
                       </>
@@ -312,7 +312,7 @@ export function AuthGateway({
                   <button
                     type="button"
                     onClick={() => setReadingPolicy(null)}
-                    className="py-2.5 px-5 bg-black text-white font-serif text-sm rounded-lg hover:bg-stone-800 transition-colors cursor-pointer"
+                    className="auth-policy-done py-2.5 px-5 bg-black text-white font-serif text-sm rounded-lg hover:bg-stone-800 transition-colors cursor-pointer"
                   >
                     Done Reading
                   </button>
@@ -351,14 +351,14 @@ export function AuthGateway({
                             Terms of Service
                           </h4>
                           <p className="text-xs text-[#57534e] mt-0.5 leading-relaxed font-serif">
-                            Regulates bespoke commission escrows, diplomatic couriers, CAD geometries, and intellectual property.
+                            Covers product listings, bespoke orders, pricing, payments, delivery, returns, cancellations, and intellectual property for purchases made in India.
                           </p>
                         </div>
                       </div>
                       <button
                         type="button"
                         onClick={() => setReadingPolicy('tos')}
-                        className="font-serif text-sm text-black underline underline-offset-2 hover:text-[#57534e] cursor-pointer shrink-0 pt-0.5"
+                        className="font-serif text-sm font-medium text-black underline underline-offset-4 decoration-black/70 hover:text-[#1c1917] cursor-pointer shrink-0 pt-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2" style={{ color: '#000000' }}
                       >
                         Read
                       </button>
@@ -377,14 +377,14 @@ export function AuthGateway({
                             Privacy Policy
                           </h4>
                           <p className="text-xs text-[#57534e] mt-0.5 leading-relaxed font-serif">
-                            Strict Swiss Federal and GDPR standards. Sovereign European vault storage, zero commercial tracking, and complete erasure rights.
+                            Explains how we collect, use, store, and protect account, order, payment, delivery, and customer-support information under applicable Indian law.
                           </p>
                         </div>
                       </div>
                       <button
                         type="button"
                         onClick={() => setReadingPolicy('privacy')}
-                        className="font-serif text-sm text-black underline underline-offset-2 hover:text-[#57534e] cursor-pointer shrink-0 pt-0.5"
+                        className="font-serif text-sm font-medium text-black underline underline-offset-4 decoration-black/70 hover:text-[#1c1917] cursor-pointer shrink-0 pt-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2" style={{ color: '#000000' }}
                       >
                         Read
                       </button>
@@ -440,7 +440,7 @@ export function AuthGateway({
                   <button
                     type="button"
                     onClick={() => setSignUpStep('inputs')}
-                    className="px-4 py-3 border border-black text-black hover:bg-stone-100 rounded-lg transition-colors cursor-pointer flex items-center gap-2 font-serif text-sm"
+                    className="px-4 py-3 border-2 border-black bg-[#faf8f5] text-black hover:bg-stone-100 rounded-lg transition-colors cursor-pointer flex items-center gap-2 font-serif font-medium text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2" style={{ color: '#000000' }}
                     title="Back to form details"
                   >
                     <ArrowLeft className="w-4 h-4 stroke-[2]" />
@@ -454,7 +454,7 @@ export function AuthGateway({
                     className={`flex-1 py-3 px-5 border text-xs uppercase tracking-[0.2em] font-medium transition-all duration-300 flex items-center justify-between rounded-lg ${
                       consent18Plus && consentTermsRead
                         ? 'border-black bg-black text-white hover:bg-stone-900 cursor-pointer shadow-md'
-                        : 'border-black bg-transparent text-black cursor-not-allowed'
+                        : 'border-black bg-[#e8e1d8] text-black cursor-not-allowed'
                     }`}
                   >
                     <span className="w-4" />
@@ -490,7 +490,7 @@ export function AuthGateway({
                       setSignUpStep('inputs');
                       setErrorMsg('');
                     }}
-                    className={`text-xs uppercase tracking-[0.2em] relative pb-2.5 font-medium transition-colors cursor-pointer ${
+                    className={`font-serif text-xs uppercase tracking-[0.2em] relative pb-2.5 font-semibold transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 ${
                       mode === 'signin'
                         ? 'text-[#1c1917]'
                         : 'text-black hover:text-[#57534e]'
@@ -508,7 +508,7 @@ export function AuthGateway({
                       setMode('signup');
                       setErrorMsg('');
                     }}
-                    className={`text-xs uppercase tracking-[0.2em] relative pb-2.5 font-medium transition-colors cursor-pointer ${
+                    className={`font-serif text-xs uppercase tracking-[0.2em] relative pb-2.5 font-semibold transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 ${
                       mode === 'signup'
                         ? 'text-[#1c1917]'
                         : 'text-black hover:text-[#57534e]'
