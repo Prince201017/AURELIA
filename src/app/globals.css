@@ -932,6 +932,15 @@ html.menu-open {
   height: 100vh;
 }
 
+/* Auth controls stay readable against the warm paper card, regardless of global button styles. */
+.auth-gateway button:not(.auth-policy-done):not([type="submit"]) {
+  color: #000000 !important;
+}
+
+.auth-gateway button[type="submit"] {
+  color: #ffffff !important;
+}
+
 /* Custom scroll for auth consent policies */
 .custom-auth-scroll::-webkit-scrollbar {
   width: 4px;
