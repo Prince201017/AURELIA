@@ -1,3 +1,5 @@
+'use client';
+
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
@@ -10,9 +12,10 @@ import { ShieldCheck, CheckCircle2, ArrowRight } from 'lucide-react';
 interface FooterProps {
   onNavigate: (sectionId: string) => void;
   onOpenAppointment: () => void;
+  onOpenAuth?: (mode?: 'signin' | 'signup') => void;
 }
 
-export function Footer({ onNavigate, onOpenAppointment }: FooterProps) {
+export function Footer({ onNavigate, onOpenAppointment, onOpenAuth }: FooterProps) {
   const [newsletterEmail, setNewsletterEmail] = useState('');
   const [newsletterSent, setNewsletterSent] = useState(false);
 
@@ -160,6 +163,14 @@ export function Footer({ onNavigate, onOpenAppointment }: FooterProps) {
             <button onClick={onOpenAppointment} className="text-left hover:text-white transition-colors">
               Salon Privé
             </button>
+            {onOpenAuth && (
+              <button
+                onClick={() => onOpenAuth('signin')}
+                className="text-left text-white/90 hover:text-white transition-colors"
+              >
+                Espace Client · Sign In
+              </button>
+            )}
             <button onClick={onOpenAppointment} className="text-left hover:text-white transition-colors">
               Bespoke Parures
             </button>

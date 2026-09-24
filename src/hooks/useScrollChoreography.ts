@@ -45,10 +45,17 @@ export function useScrollChoreography() {
           }
         });
       },
-      { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
+      { threshold: 0.05, rootMargin: '0px 0px 50px 0px' }
     );
 
-    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    document.querySelectorAll('.reveal').forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top <= window.innerHeight + 100) {
+        el.classList.add('visible');
+      } else {
+        observer.observe(el);
+      }
+    });
 
     // Reduced motion check
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');

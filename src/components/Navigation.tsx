@@ -1,3 +1,5 @@
+'use client';
+
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
@@ -10,9 +12,19 @@ interface NavigationProps {
   onOpenMenu: () => void;
   onNavigate: (sectionId: string) => void;
   onOpenAppointment: () => void;
+  onOpenAuth: (mode?: 'signin' | 'signup') => void;
+  currentUser?: { name: string; email: string } | null;
+  onSignOut?: () => void;
 }
 
-export function Navigation({ onOpenMenu, onNavigate, onOpenAppointment }: NavigationProps) {
+export function Navigation({
+  onOpenMenu,
+  onNavigate,
+  onOpenAppointment,
+  onOpenAuth,
+  currentUser,
+  onSignOut,
+}: NavigationProps) {
   // Start with true since Hero is the first banner at top of page
   const [isOverBanner, setIsOverBanner] = useState(true);
 
@@ -118,6 +130,32 @@ export function Navigation({ onOpenMenu, onNavigate, onOpenAppointment }: Naviga
         >
           Salon Privé
         </button>
+
+        {currentUser ? (
+          <div className="flex items-center gap-3 pl-2">
+            <button
+              onClick={() => onOpenAuth('signin')}
+              className="text-[11px] tracking-[0.2em] uppercase text-white/90 hover:text-white transition-colors"
+              title={currentUser.email}
+            >
+              {currentUser.name}
+            </button>
+            <span className="text-white/20">·</span>
+            <button
+              onClick={onSignOut}
+              className="text-[10px] tracking-[0.2em] uppercase text-[#8c857b] hover:text-white transition-colors"
+            >
+              Déconnexion
+            </button>
+          </div>
+        ) : (
+          <button
+            onClick={() => onOpenAuth('signin')}
+            className="text-[11px] tracking-[0.22em] uppercase text-white/80 hover:text-white transition-colors pl-2"
+          >
+            Sign In
+          </button>
+        )}
       </nav>
 
       <button

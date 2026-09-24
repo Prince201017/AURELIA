@@ -1,6 +1,5 @@
-@import "tailwindcss";
-
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&display=swap');
+@import "tailwindcss";
 
 :root {
   --ink: #090807;
@@ -810,7 +809,7 @@ h1 {
   color: #aaa198;
 }
 
-/* Mobile Panel */
+/* Mobile Panel with Smooth Internal Scroll */
 .mobile-panel {
   position: fixed;
   inset: 0;
@@ -822,8 +821,19 @@ h1 {
   transition: clip-path 1s var(--ease-lux);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   padding: 100px 8vw 34px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+.mobile-scroll-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
+  padding-bottom: 30px;
 }
 
 .mobile-panel.open {
@@ -915,8 +925,26 @@ h1 {
   transform: none;
 }
 
-body.menu-open {
-  overflow: hidden;
+body.menu-open,
+html.menu-open {
+  overflow: hidden !important;
+  touch-action: none;
+  height: 100vh;
+}
+
+/* Custom scroll for auth consent policies */
+.custom-auth-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-auth-scroll::-webkit-scrollbar-track {
+  background: #f1ede6;
+}
+.custom-auth-scroll::-webkit-scrollbar-thumb {
+  background: #000000;
+}
+.custom-auth-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #000000 #f1ede6;
 }
 
 /* Reveal transition helpers */
